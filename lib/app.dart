@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_template_firebase/base_scaffold.dart';
 import 'package:login_template_firebase/cubits/auth_cubit.dart';
+import 'package:login_template_firebase/login_page.dart';
+
+import 'firebase_options.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -15,7 +18,9 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   /// The future is part of the state of our widget. We should not call `initializeApp`
   /// directly inside [build].
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   @override
   void initState() {
@@ -48,12 +53,7 @@ class _AppState extends State<App> {
                     if (user != null) {
                       return const BaseScaffold();
                     }
-                    return Column(
-                      children: const [
-                        CircularProgressIndicator(),
-                        Text("Logging in..."),
-                      ],
-                    );
+                    return const LoginPage();
                   },
                 ),
               );
