@@ -23,7 +23,6 @@ A new Flutter project.
     2. Add your REVERSED_CLIENT_ID to Info.plist
     
     Android   
-    1. Add google-services.json (Android) (Maybe no need)
-    2. You do need to enable the OAuth APIs that you want, using the Google Cloud Platform API 
+    1. You do need to enable the OAuth APIs that you want, using the Google Cloud Platform API 
     
 
