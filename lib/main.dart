@@ -7,5 +7,3 @@ void main() {
 
   runApp(const App());
 }
-//1. enable authentication in firebase
-//2. enable firestore in firebase
