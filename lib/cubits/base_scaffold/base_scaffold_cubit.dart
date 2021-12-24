@@ -4,29 +4,29 @@ import 'package:equatable/equatable.dart';
 part 'base_scaffold_state.dart';
 
 class BaseScaffoldCubit extends Cubit<BaseScaffoldState> {
-  BaseScaffoldCubit() : super(HomeState());
+  BaseScaffoldCubit() : super(const HomeState());
 
   void pickItem(int i) {
     switch (i) {
       case 0:
-        emit(HomeState());
+        emit(const HomeState());
         break;
       case 1:
-        emit(CalendarState());
+        emit(const CalendarState());
         break;
       case 2:
-        emit(ProgressState());
+        emit(const ProgressState());
         break;
       case 3:
-        emit(ProfileState());
+        emit(const ProfileState());
         break;
       case 4:
-        emit(BuddiesScreenState());
+        emit(const BuddiesScreenState());
         break;
     }
   }
 
-  void goToHomeScreen() => emit(HomeState());
+  void goToHomeScreen() => emit(const HomeState());
 
-  void goToBuddyScreen() => emit(BuddiesScreenState());
+  void goToBuddyScreen() => emit(const BuddiesScreenState());
 }

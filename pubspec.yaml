@@ -22,6 +22,7 @@ dependencies:
   hive: ^2.0.5
   hive_flutter: ^1.1.0
   firebase_analytics: ^9.0.4
+  bloc: ^8.0.1
 
 dev_dependencies:
   flutter_test:
