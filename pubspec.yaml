@@ -40,8 +40,8 @@ flavorizr:
 
       android:
         applicationId: "com.example.dev"
-       # firebase:
-        #  config: ".firebase/dev/google-services.json"
+        firebase:
+          config: "android/app/src/dev/google-services.json"
 
       ios:
         bundleId: "com.example.dev"
@@ -54,8 +54,8 @@ flavorizr:
 
       android:
         applicationId: "com.example.staging"
-      #  firebase:
-       #   config: ".firebase/staging/google-services.json"
+        firebase:
+          config: "android/app/src/staging/google-services.json"
       ios:
         bundleId: "com.example.staging"
         firebase:
@@ -67,8 +67,8 @@ flavorizr:
 
       android:
         applicationId: "com.example.prod"
-      #  firebase:
-      #    config: ".firebase/prod/google-services.json"
+        firebase:
+          config: "android/app/src/prod/google-services.json"
       ios:
         bundleId: "com.example.prod"
         firebase:
