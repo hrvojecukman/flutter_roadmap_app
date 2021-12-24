@@ -7,7 +7,7 @@ import 'package:login_template_firebase/cubits/auth_cubit.dart';
 import 'package:login_template_firebase/login_page.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 
-import 'config/theme/theme.dart';
+import 'common/theme/theme.dart';
 import 'cubits/base_scaffold/base_scaffold_cubit.dart';
 import 'firebase_options.dart';
 import 'flavors.dart';

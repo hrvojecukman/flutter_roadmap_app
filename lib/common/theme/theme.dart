@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_template_firebase/config/theme/app_colors.dart';
+
+import 'app_colors.dart';
 
 class CustomTheme {
   static ThemeData get lightTheme {
