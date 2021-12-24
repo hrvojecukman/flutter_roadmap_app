@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_template_firebase/common/firebase/events.dart';
 import 'package:login_template_firebase/cubits/base_scaffold/base_scaffold_cubit.dart';
 import 'package:login_template_firebase/pages/base_scaffold/widgets/custom_bottom_navigation_bar.dart';
 import 'package:login_template_firebase/pages/page_1/page_1.dart';
@@ -34,7 +35,13 @@ class _BaseScaffoldState extends State<BaseScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: BlocBuilder<BaseScaffoldCubit, BaseScaffoldState>(
+        child: BlocConsumer<BaseScaffoldCubit, BaseScaffoldState>(
+          listener: (context, baseScaffoldState) {
+            ///Tracking screen changes and logging them to analytics
+            analytics.setCurrentScreen(
+              screenName: baseScaffoldState.toString(),
+            );
+          },
           builder: (context, baseScaffoldState) {
             if (baseScaffoldState is HomeState) {
               return Page1(title: baseScaffoldState.toString());
