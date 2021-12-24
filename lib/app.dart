@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_template_firebase/cubits/auth_cubit.dart';
 import 'package:login_template_firebase/login_page.dart';
-import 'package:login_template_firebase/pages/base_scaffold.dart';
+import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 
+import 'cubits/base_scaffold/base_scaffold_cubit.dart';
 import 'firebase_options.dart';
 import 'flavors.dart';
 
@@ -87,6 +88,9 @@ class _AppState extends State<MyApp> {
                 providers: [
                   BlocProvider(
                     create: (BuildContext context) => AuthCubit(),
+                  ),
+                  BlocProvider(
+                    create: (BuildContext context) => BaseScaffoldCubit(),
                   ),
                 ],
                 child: BlocBuilder<AuthCubit, User?>(
