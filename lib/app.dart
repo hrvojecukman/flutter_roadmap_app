@@ -7,6 +7,7 @@ import 'package:login_template_firebase/cubits/auth_cubit.dart';
 import 'package:login_template_firebase/login_page.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 
+import 'config/theme/theme.dart';
 import 'cubits/base_scaffold/base_scaffold_cubit.dart';
 import 'firebase_options.dart';
 import 'flavors.dart';
@@ -18,9 +19,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: F.title,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.lightTheme,
       home: _flavorBanner(
         child: const MyApp(),
         show: kDebugMode,
@@ -71,46 +70,42 @@ class _AppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: FutureBuilder(
-          // Initialize FlutterFire:
-          future: _initialization,
-          builder: (context, snapshot) {
-            // Check for errors
-            if (snapshot.hasError) {
-              return const Text("Error");
-            }
+    return FutureBuilder(
+      // Initialize FlutterFire:
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Check for errors
+        if (snapshot.hasError) {
+          return const Text("Error");
+        }
 
-            // Once complete, show your application
-            if (snapshot.connectionState == ConnectionState.done) {
-              return MultiBlocProvider(
-                providers: [
-                  BlocProvider(
-                    create: (BuildContext context) => AuthCubit(),
-                  ),
-                  BlocProvider(
-                    create: (BuildContext context) => BaseScaffoldCubit(),
-                  ),
-                ],
-                child: BlocBuilder<AuthCubit, User?>(
-                  builder: (context, user) {
-                    if (user != null) {
-                      return const BaseScaffold();
-                    }
-                    return const LoginPage();
-                  },
-                ),
-              );
-            }
+        // Once complete, show your application
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (BuildContext context) => AuthCubit(),
+              ),
+              BlocProvider(
+                create: (BuildContext context) => BaseScaffoldCubit(),
+              ),
+            ],
+            child: BlocBuilder<AuthCubit, User?>(
+              builder: (context, user) {
+                if (user != null) {
+                  return const BaseScaffold();
+                }
+                return const LoginPage();
+              },
+            ),
+          );
+        }
 
-            // Otherwise, show something whilst waiting for initialization to complete
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          },
-        ),
-      ),
+        // Otherwise, show something whilst waiting for initialization to complete
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 }
