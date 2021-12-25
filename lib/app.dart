@@ -7,10 +7,10 @@ import 'package:login_template_firebase/cubits/auth_cubit.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 import 'package:login_template_firebase/pages/login/login_page.dart';
 
+import 'common/firebase/firebase_options.dart';
+import 'common/flavors/flavors.dart';
 import 'common/theme/theme.dart';
 import 'cubits/base_scaffold/base_scaffold_cubit.dart';
-import 'firebase_options.dart';
-import 'flavors.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
