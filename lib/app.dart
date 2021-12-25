@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_template_firebase/cubits/auth_cubit.dart';
-import 'package:login_template_firebase/login_page.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
+import 'package:login_template_firebase/pages/login/login_page.dart';
 
 import 'common/theme/theme.dart';
 import 'cubits/base_scaffold/base_scaffold_cubit.dart';
@@ -95,7 +95,9 @@ class _AppState extends State<MyApp> {
                 if (user != null) {
                   return const BaseScaffold();
                 }
-                return const LoginPage();
+                return const Scaffold(
+                  body: LoginPage(),
+                );
               },
             ),
           );

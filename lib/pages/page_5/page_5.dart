@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_template_firebase/repositories/auth_repository.dart';
 
 class Page5 extends StatelessWidget {
   final String title;
@@ -7,6 +8,18 @@ class Page5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title);
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(title),
+        MaterialButton(
+          color: Colors.blue,
+          onPressed: () async {
+            await AuthRepository.signOut();
+          },
+          child: const Text("Log out"),
+        ),
+      ],
+    );
   }
 }
