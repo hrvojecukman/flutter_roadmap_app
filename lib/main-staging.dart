@@ -8,8 +8,8 @@ import 'cubits/my_bloc_observer.dart';
 
 final flavor = Flavor.STAGING;
 
-void main() {
-  configMain(flavor);
+Future<void> main() async {
+  await configMain(flavor);
 
   BlocOverrides.runZoned(
     () => runApp(const App()),
