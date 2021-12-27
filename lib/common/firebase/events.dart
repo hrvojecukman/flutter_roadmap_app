@@ -1,7 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-final analytics = FirebaseAnalytics.instance;
-
 extension FirebaseAnalyticsExtensions on FirebaseAnalytics {
   static const String customName = 'story_like';
 

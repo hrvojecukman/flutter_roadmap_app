@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 import 'app.dart';
 import 'common/flavors/flavors.dart';
+import 'config_main.dart';
 import 'cubits/my_bloc_observer.dart';
 
+final flavor = Flavor.STAGING;
+
 void main() {
-  F.appFlavor = Flavor.STAGING;
-  WidgetsFlutterBinding.ensureInitialized();
+  configMain(flavor);
 
   BlocOverrides.runZoned(
     () => runApp(const App()),
