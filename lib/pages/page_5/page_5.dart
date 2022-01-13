@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_template_firebase/repositories/auth_repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_template_firebase/cubits/auth_cubit.dart';
 
 class Page5 extends StatelessWidget {
   final String title;
@@ -14,8 +15,8 @@ class Page5 extends StatelessWidget {
         Text(title),
         MaterialButton(
           color: Colors.blue,
-          onPressed: () async {
-            await AuthRepository.signOut();
+          onPressed: () {
+            BlocProvider.of<AuthCubit>(context).signOut();
           },
           child: const Text("Log out"),
         ),

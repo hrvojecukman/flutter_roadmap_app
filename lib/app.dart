@@ -6,6 +6,7 @@ import 'package:login_template_firebase/cubits/auth_cubit.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 import 'package:login_template_firebase/pages/login/login_page.dart';
 
+import 'common/configuration/injection.dart';
 import 'common/flavors/flavors.dart';
 import 'common/theme/theme.dart';
 import 'cubits/base_scaffold/base_scaffold_cubit.dart';
@@ -65,7 +66,7 @@ class _AppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (BuildContext context) => AuthCubit(),
+          create: (context) => locator<AuthCubit>(),
         ),
         BlocProvider(
           create: (BuildContext context) => BaseScaffoldCubit(),

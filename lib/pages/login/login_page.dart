@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_template_firebase/repositories/auth_repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_template_firebase/cubits/auth_cubit.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,8 +10,8 @@ class LoginPage extends StatelessWidget {
     return Center(
       child: MaterialButton(
         color: Colors.blue,
-        onPressed: () async {
-          await AuthRepository.signInWithGoogle();
+        onPressed: () {
+          BlocProvider.of<AuthCubit>(context).signInWithGoogle();
         },
         child: const Text("Login with google"),
       ),
