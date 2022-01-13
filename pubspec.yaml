@@ -23,12 +23,16 @@ dependencies:
   hive: ^2.0.5
   hive_flutter: ^1.1.0
   bloc: ^8.0.1
+  injectable: ^1.5.3
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_flavorizr: ^2.1.0
   flutter_lints: ^1.0.0
+  build_runner: ^2.1.7
+  injectable_generator: ^1.5.3
 
 
 flavorizr:
