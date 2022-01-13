@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'roll_plus_user.g.dart';
@@ -7,7 +8,7 @@ class User {
   final String email;
   final String firstName;
   final String lastName;
-  final String rideReference;
+  final DocumentReference rideReference;
   final String braintreeCustomerId;
 
   User({
