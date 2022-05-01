@@ -1,6 +1,6 @@
 {
-    "name": "login_template_firebase",
-    "short_name": "login_template_firebase",
+    "name": "flutter_roadmap",
+    "short_name": "flutter_roadmap",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

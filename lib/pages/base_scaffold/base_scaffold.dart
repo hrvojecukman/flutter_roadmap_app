@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_template_firebase/cubits/base_scaffold/base_scaffold_cubit.dart';
-import 'package:login_template_firebase/features/login/domain/cubits/user_cubit.dart';
-import 'package:login_template_firebase/pages/base_scaffold/widgets/custom_bottom_navigation_bar.dart';
+import 'package:flutter_roadmap/cubits/base_scaffold/base_scaffold_cubit.dart';
+import 'package:flutter_roadmap/features/login/domain/cubits/user_cubit.dart';
+import 'package:flutter_roadmap/pages/base_scaffold/widgets/custom_bottom_navigation_bar.dart';
 
 class BaseScaffold extends StatelessWidget {
   const BaseScaffold({Key? key}) : super(key: key);

@@ -1,5 +1,8 @@
-import 'package:login_template_firebase/main.dart';
+import 'package:flutter/material.dart';
+import 'app.dart';
+import 'flavors.dart';
 
-import 'common/flavors/flavors.dart';
-
-Future<void> main() async => mainCommon(Flavor.prod);
+void main() {
+  F.appFlavor = Flavor.PROD;
+  runApp(App());
+}

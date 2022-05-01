@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_template_firebase/common/info/info_cubit.dart';
-import 'package:login_template_firebase/common/utils/flushbar_utils.dart';
+import 'package:flutter_roadmap/common/info/info_cubit.dart';
+import 'package:flutter_roadmap/common/utils/flushbar_utils.dart';
 
 const emptyString = " ";
 

@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:login_template_firebase/common/errors/either_app_failure_or.dart';
-import 'package:login_template_firebase/common/firebase/firestore/firestore_collections.dart';
-import 'package:login_template_firebase/models/app_user.dart';
+import 'package:flutter_roadmap/common/errors/either_app_failure_or.dart';
+import 'package:flutter_roadmap/common/firebase/firestore/firestore_collections.dart';
+import 'package:flutter_roadmap/models/app_user.dart';
 
 import '../../../common/errors/app_failure.dart';
 

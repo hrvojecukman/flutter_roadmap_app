@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:login_template_firebase/common/theme/app_sizes.dart';
+import 'package:flutter_roadmap/common/theme/app_sizes.dart';
 
 mixin FlushBarUtils {
   Future<void> showErrorFlushBar({

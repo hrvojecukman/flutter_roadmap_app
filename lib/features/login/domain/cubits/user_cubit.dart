@@ -4,12 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
-import 'package:login_template_firebase/common/configuration/injection.dart';
-import 'package:login_template_firebase/common/errors/app_failure.dart';
-import 'package:login_template_firebase/common/info/info_cubit.dart';
-import 'package:login_template_firebase/cubits/auth_cubit.dart';
-import 'package:login_template_firebase/features/login/repository/user_repository.dart';
-import 'package:login_template_firebase/models/app_user.dart';
+import 'package:flutter_roadmap/common/configuration/injection.dart';
+import 'package:flutter_roadmap/common/errors/app_failure.dart';
+import 'package:flutter_roadmap/common/info/info_cubit.dart';
+import 'package:flutter_roadmap/cubits/auth_cubit.dart';
+import 'package:flutter_roadmap/features/login/repository/user_repository.dart';
+import 'package:flutter_roadmap/models/app_user.dart';
 
 part 'user_state.dart';
 

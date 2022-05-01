@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_template_firebase/cubits/base_scaffold/base_scaffold_cubit.dart';
+import 'package:flutter_roadmap/cubits/base_scaffold/base_scaffold_cubit.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);

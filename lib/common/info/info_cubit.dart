@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
-import 'package:login_template_firebase/common/errors/app_failure.dart';
+import 'package:flutter_roadmap/common/errors/app_failure.dart';
 
 part 'info_state.dart';
 

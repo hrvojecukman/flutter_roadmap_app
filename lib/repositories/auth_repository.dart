@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:login_template_firebase/common/configuration/injection.dart';
-import 'package:login_template_firebase/common/errors/app_failure.dart';
-import 'package:login_template_firebase/common/info/info_cubit.dart';
-import 'package:login_template_firebase/features/login/repository/user_repository.dart';
+import 'package:flutter_roadmap/common/configuration/injection.dart';
+import 'package:flutter_roadmap/common/errors/app_failure.dart';
+import 'package:flutter_roadmap/common/info/info_cubit.dart';
+import 'package:flutter_roadmap/features/login/repository/user_repository.dart';
 
 abstract class AuthRepository {
   Future<void> signIn({

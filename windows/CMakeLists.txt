@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(login_template_firebase LANGUAGES CXX)
+project(flutter_roadmap LANGUAGES CXX)
 
-set(BINARY_NAME "login_template_firebase")
+set(BINARY_NAME "flutter_roadmap")
 
 cmake_policy(SET CMP0063 NEW)
 

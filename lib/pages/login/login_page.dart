@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:login_template_firebase/common/theme/app_sizes.dart';
-import 'package:login_template_firebase/common/widgets/custom_loading_indicator.dart';
-import 'package:login_template_firebase/cubits/auth_cubit.dart';
-import 'package:login_template_firebase/features/login/domain/cubits/user_cubit.dart';
+import 'package:flutter_roadmap/common/theme/app_sizes.dart';
+import 'package:flutter_roadmap/common/widgets/custom_loading_indicator.dart';
+import 'package:flutter_roadmap/cubits/auth_cubit.dart';
+import 'package:flutter_roadmap/features/login/domain/cubits/user_cubit.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);

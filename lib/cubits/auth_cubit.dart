@@ -8,11 +8,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:login_template_firebase/common/configuration/injection.dart';
-import 'package:login_template_firebase/common/errors/app_failure.dart';
-import 'package:login_template_firebase/common/info/info_cubit.dart';
-import 'package:login_template_firebase/features/login/domain/cubits/user_cubit.dart';
-import 'package:login_template_firebase/repositories/auth_repository.dart';
+import 'package:flutter_roadmap/common/configuration/injection.dart';
+import 'package:flutter_roadmap/common/errors/app_failure.dart';
+import 'package:flutter_roadmap/common/info/info_cubit.dart';
+import 'package:flutter_roadmap/features/login/domain/cubits/user_cubit.dart';
+import 'package:flutter_roadmap/repositories/auth_repository.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 part 'auth_state.dart';

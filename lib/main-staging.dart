@@ -1,4 +1,8 @@
-import 'common/flavors/flavors.dart';
-import 'main.dart';
+import 'package:flutter/material.dart';
+import 'app.dart';
+import 'flavors.dart';
 
-Future<void> main() async => mainCommon(Flavor.staging);
+void main() {
+  F.appFlavor = Flavor.STAGING;
+  runApp(App());
+}

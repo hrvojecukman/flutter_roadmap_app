@@ -1,4 +1,4 @@
-name: login_template_firebase
+name: flutter_roadmap
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -55,40 +55,40 @@ flavorizr:
         name: "Dev App"
 
       android:
-        applicationId: "com.example.dev"
-        firebase:
-          config: "android/app/src/dev/google-services.json"
+        applicationId: "com.hrvoje.flutter-roadmap.dev"
+#        firebase:
+#          config: "android/app/src/dev/google-services.json"
 
       ios:
-        bundleId: "com.example.dev"
-        firebase:
-          config: "ios/Runner/Firebase/dev/GoogleService-Info.plist"
+        bundleId: "com.hrvoje.flutter-roadmap.dev"
+#        firebase:
+#          config: "ios/Runner/Firebase/dev/GoogleService-Info.plist"
 
     staging:
       app:
         name: "Staging App"
 
       android:
-        applicationId: "com.example.staging"
-        firebase:
-          config: "android/app/src/staging/google-services.json"
+        applicationId: "com.hrvoje.flutter-roadmap.staging"
+#        firebase:
+#          config: "android/app/src/staging/google-services.json"
       ios:
-        bundleId: "com.example.staging"
-        firebase:
-          config: "ios/Runner/Firebase/staging/GoogleService-Info.plist"
+        bundleId: "com.hrvoje.flutter-roadmap.staging"
+#        firebase:
+#          config: "ios/Runner/Firebase/staging/GoogleService-Info.plist"
 
     prod:
       app:
         name: "Prod App"
 
       android:
-        applicationId: "com.example.prod"
-        firebase:
-          config: "android/app/src/prod/google-services.json"
+        applicationId: "com.hrvoje.flutter-roadmap.prod"
+#        firebase:
+#          config: "android/app/src/prod/google-services.json"
       ios:
-        bundleId: "com.example.prod"
-        firebase:
-          config: "ios/Runner/Firebase/prod/GoogleService-Info.plist"
+        bundleId: "com.hrvoje.flutter-roadmap.prod"
+#        firebase:
+#          config: "ios/Runner/Firebase/prod/GoogleService-Info.plist"
 flutter:
 
   uses-material-design: true

@@ -1,5 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:login_template_firebase/common/flavors/flavors.dart';
+import 'package:flutter_roadmap/common/flavors/flavors.dart';
 
 final analytics = FirebaseAnalytics.instance;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_template_firebase/cubits/auth_cubit.dart';
+import 'package:flutter_roadmap/cubits/auth_cubit.dart';
 
 class Page5 extends StatelessWidget {
   const Page5({Key? key}) : super(key: key);

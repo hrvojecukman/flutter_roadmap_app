@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_roadmap/firebase_options.dart';
 
 import 'common/configuration/injection.dart';
 import 'common/firebase/analytics.dart';
-import 'common/firebase/firebase_options.dart';
 import 'common/flavors/flavors.dart';
 
 Future<void> configMain(Flavor flavor) async {

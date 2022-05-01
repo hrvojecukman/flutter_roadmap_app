@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:login_template_firebase/pages/page_1/page_1.dart';
-import 'package:login_template_firebase/pages/page_2/page_2.dart';
-import 'package:login_template_firebase/pages/page_3/page_3.dart';
-import 'package:login_template_firebase/pages/page_4/page_4.dart';
-import 'package:login_template_firebase/pages/page_5/page_5.dart';
+import 'package:flutter_roadmap/pages/page_1/page_1.dart';
+import 'package:flutter_roadmap/pages/page_2/page_2.dart';
+import 'package:flutter_roadmap/pages/page_3/page_3.dart';
+import 'package:flutter_roadmap/pages/page_4/page_4.dart';
+import 'package:flutter_roadmap/pages/page_5/page_5.dart';
 
 part 'base_scaffold_state.dart';
 

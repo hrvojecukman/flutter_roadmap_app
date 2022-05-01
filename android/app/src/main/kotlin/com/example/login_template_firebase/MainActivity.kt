@@ -1,4 +1,4 @@
-package com.example.login_template_firebase
+package com.hrvoje.flutter_roadmap
 
 import io.flutter.embedding.android.FlutterActivity
 
