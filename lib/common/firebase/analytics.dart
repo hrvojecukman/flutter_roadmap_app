@@ -5,7 +5,7 @@ final analytics = FirebaseAnalytics.instance;
 
 void enableFirebaseAnalytics(Flavor flavor) {
   bool enabled = false;
-  if (flavor == Flavor.PROD) {
+  if (flavor == Flavor.prod) {
     enabled = true;
   }
 

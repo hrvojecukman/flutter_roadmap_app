@@ -1,30 +1,34 @@
 part of 'base_scaffold_cubit.dart';
 
 abstract class BaseScaffoldState extends Equatable {
-  final int index;
+  final List<AppTab> tabs;
+  final AppTab selectedTab;
 
-  const BaseScaffoldState(this.index);
+  const BaseScaffoldState({
+    required this.tabs,
+    required this.selectedTab,
+  });
 
   @override
-  List<Object> get props => [index];
+  List<Object> get props => [tabs, selectedTab];
 }
 
-class HomeState extends BaseScaffoldState {
-  const HomeState() : super(0);
+class BaseScaffoldStateChanged extends BaseScaffoldState {
+  const BaseScaffoldStateChanged({
+    required AppTab selectedTab,
+    required List<AppTab> tabs,
+  }) : super(selectedTab: selectedTab, tabs: tabs);
 }
 
-class CalendarState extends BaseScaffoldState {
-  const CalendarState() : super(1);
-}
+class AppTab extends Equatable {
+  final String title;
+  final Widget page;
 
-class ProgressState extends BaseScaffoldState {
-  const ProgressState() : super(2);
-}
+  const AppTab({
+    required this.title,
+    required this.page,
+  });
 
-class ProfileState extends BaseScaffoldState {
-  const ProfileState() : super(3);
-}
-
-class BuddiesScreenState extends BaseScaffoldState {
-  const BuddiesScreenState() : super(4);
+  @override
+  List<Object?> get props => [title, page];
 }

@@ -5,7 +5,6 @@ import 'package:login_template_firebase/cubits/base_scaffold/base_scaffold_cubit
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
 
-  //TODO: Change colors to theme
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BaseScaffoldCubit, BaseScaffoldState>(
@@ -13,15 +12,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
         return BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.black,
-          currentIndex: baseScaffoldState.index,
-          onTap: BlocProvider.of<BaseScaffoldCubit>(context).pickItem,
-          items: <BottomNavigationBarItem>[
-            myBottomNavigationBarItem(Icons.help, "Help"),
-            myBottomNavigationBarItem(Icons.help, "Help"),
-            myBottomNavigationBarItem(Icons.help, "Help"),
-            myBottomNavigationBarItem(Icons.help, "Help"),
-            myBottomNavigationBarItem(Icons.help, "Help"),
-          ],
+          currentIndex: baseScaffoldState.tabs.indexOf(
+            baseScaffoldState.selectedTab,
+          ),
+          onTap: BlocProvider.of<BaseScaffoldCubit>(context).changeTab,
+          items: baseScaffoldState.tabs
+              .map((e) => myBottomNavigationBarItem(Icons.close, e.title))
+              .toList(),
           selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.blue,
         );
@@ -30,7 +27,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
   }
 
   BottomNavigationBarItem myBottomNavigationBarItem(
-      IconData icon, String title) {
+    IconData icon,
+    String title,
+  ) {
     return BottomNavigationBarItem(
       icon: Icon(icon),
       label: title,

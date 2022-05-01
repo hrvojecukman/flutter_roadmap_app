@@ -1,8 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_template_firebase/common/info/info_listene.dart';
+import 'package:login_template_firebase/common/widgets/custom_loading_indicator.dart';
 import 'package:login_template_firebase/cubits/auth_cubit.dart';
+import 'package:login_template_firebase/features/login/domain/cubits/user_cubit.dart';
 import 'package:login_template_firebase/pages/base_scaffold/base_scaffold.dart';
 import 'package:login_template_firebase/pages/login/login_page.dart';
 
@@ -72,15 +74,27 @@ class _AppState extends State<MyApp> {
           create: (BuildContext context) => BaseScaffoldCubit(),
         ),
       ],
-      child: BlocBuilder<AuthCubit, User?>(
-        builder: (context, user) {
-          if (user != null) {
-            return const BaseScaffold();
-          }
-          return const Scaffold(
-            body: LoginPage(),
-          );
-        },
+      child: InfoListener(
+        child: BlocConsumer<AuthCubit, AuthState>(
+          listener: (context, state) {
+            if (state is AuthPassed) {
+              locator<UserCubit>().isNewUser();
+            }
+          },
+          builder: (context, state) {
+            if (state is AuthLoading) {
+              return const CustomLoadingIndicator();
+            }
+            return BlocBuilder<UserCubit, UserState>(
+              builder: (context, state) {
+                if (state is UserLoggedIn) {
+                  return const BaseScaffold();
+                }
+                return const LoginPage();
+              },
+            );
+          },
+        ),
       ),
     );
   }
