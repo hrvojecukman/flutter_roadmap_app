@@ -24,7 +24,10 @@ class UserCubit extends Cubit<UserState> {
     final response = await _userRepository.createNewUser();
     response.fold(
       _emitError,
-      (r) => locator<InfoCubit>().showInfo("User created successfully!"),
+      (r) {
+        locator<InfoCubit>().showInfo("User created successfully!");
+        startListening();
+      },
     );
   }
 
@@ -39,7 +42,7 @@ class UserCubit extends Cubit<UserState> {
   Future<void> isNewUser() async {
     emit(const UserLoading());
     if (await _userRepository.isNewUser()) {
-      emit(const UserWaitingForAgreement());
+      _createNewUser();
     } else {
       startListening();
     }

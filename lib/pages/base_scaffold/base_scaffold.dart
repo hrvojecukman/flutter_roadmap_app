@@ -32,7 +32,7 @@ class BaseScaffold extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Drawer(
                   child: Column(
-                    children: [],
+                    children: const [],
                   ),
                 ),
               ),

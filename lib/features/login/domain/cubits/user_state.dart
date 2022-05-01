@@ -13,16 +13,6 @@ class UserLoggedOut extends UserState {
   const UserLoggedOut() : super(null);
 }
 
-class UserWaitingForAgreement extends UserState {
-  final bool isApple;
-  final bool isGoogle;
-
-  const UserWaitingForAgreement({
-    this.isApple = false,
-    this.isGoogle = false,
-  }) : super(null);
-}
-
 class UserLoading extends UserState {
   const UserLoading() : super(null);
 }
