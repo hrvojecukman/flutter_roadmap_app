@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:injectable/injectable.dart';
 import 'package:flutter_roadmap/common/errors/either_app_failure_or.dart';
 import 'package:flutter_roadmap/common/firebase/firestore/firestore_collections.dart';
 import 'package:flutter_roadmap/models/app_user.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../common/errors/app_failure.dart';
 
@@ -23,9 +23,14 @@ abstract class UserRepository {
 @Injectable(as: UserRepository)
 class AppUserRepository implements UserRepository {
   final _firebaseAuth = FirebaseAuth.instance;
-  final _usersCollection = FirebaseFirestore.instance.collection(
-    FirestoreCollections.users,
-  );
+  final _usersCollection = FirebaseFirestore.instance
+      .collection(
+        FirestoreCollections.users,
+      )
+      .withConverter<AppUser>(
+        fromFirestore: (snapshot, _) => AppUser.fromJson(snapshot.data() ?? {}),
+        toFirestore: (appUser, _) => appUser.toJson(),
+      );
 
   @override
   EitherAppFailureOr<None> createNewUser() async {
@@ -34,14 +39,14 @@ class AppUserRepository implements UserRepository {
 
       final _firebaseUser = _firebaseAuth.currentUser;
 
-      final newappUser = AppUser(
+      final newAppUser = AppUser(
         email: _firebaseUser?.email,
         name: _firebaseUser?.displayName,
+        watchedLessons: const [],
       );
 
       //TODO: move later and different logic
-
-      await userReference.set(newappUser.toJson());
+      await userReference.set(newAppUser);
       return const Right(None());
     } catch (exc) {
       return Left(AppFailure(
@@ -54,18 +59,7 @@ class AppUserRepository implements UserRepository {
   @override
   Stream<AppUser?> getUserStream() {
     final userReference = getCurrentUserReference();
-
-    return userReference.snapshots().map(
-      (userSnapshot) {
-        final userJson = userSnapshot.data();
-
-        if (userJson != null) {
-          final appUser = AppUser.fromJson(userJson);
-          return appUser;
-        }
-        return null;
-      },
-    );
+    return userReference.snapshots().map((userSnapshot) => userSnapshot.data());
   }
 
   @override
@@ -83,19 +77,11 @@ class AppUserRepository implements UserRepository {
   Future<AppUser?> getUser() async {
     final userReference = getCurrentUserReference();
     final userSnapshot = await userReference.get();
-
-    final userJson = userSnapshot.data();
-
-    if (userJson != null) {
-      final appUser = AppUser.fromJson(userJson);
-      return appUser;
-    } else {
-      return null;
-    }
+    return userSnapshot.data();
   }
 
   @override
-  DocumentReference<Map<String, dynamic>> getCurrentUserReference() {
+  DocumentReference<AppUser> getCurrentUserReference() {
     final _firebaseUser = _firebaseAuth.currentUser;
     if (_firebaseUser == null) {
       throw Exception("Current user is null");
